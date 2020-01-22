@@ -20,15 +20,16 @@
 	<script src="js/buildTableFromData.js"></script>
 	<script src="js/loadPage.js"></script>
 	<script>
-		$('#zasoby').click(() => window.location.replace(`zasoby.html`));
-		$('#godashboard').click(() => window.location.replace(`dashboard.html`));
-		$('#logout').click(() => window.location.replace(`index.html`));
 		$(document).ready(function() {
 			loadPage('page_template.html', function() {
-				sendRequest('php/endpoints/selectAll.php?tableName=Zasoby', function(data) {
-					var entities = JSON.parse(data);
-					var html = buildTableFromData(['ID Zasobu', 'ID Właściciela', 'Rodzaj Zasobu', 'Nazwa Zasobu'], entities);
-					$('#requestResponse').html(html);
+				sendRequest('php/endpoints/selectAll.php?tableName=Czynosci_Policjantow', function(data) {
+					try {
+						var entities = JSON.parse(data);
+						var html = buildTableFromData(['ID Czynnosci Policjanta', 'ID Wykroczenia', 'ID Policjanta'], entities);
+						$('#requestResponse').html(html);
+					} catch (e) {
+						$('#requestResponse').html(data);
+					}
 				});
 			});
 		});

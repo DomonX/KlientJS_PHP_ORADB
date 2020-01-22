@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<meta name="description" content="" />
 		<meta name="author" content="" />
-
 		<!-- Bootstrap core CSS -->
 		<link href="dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -15,19 +14,15 @@
 
 	<body></body>
 	<script src="dist/jquery/jquery-3.4.1.min.js"></script>
-	<script src="js/menuTransitions.js"></script>
 	<script src="js/sendToBackend.js"></script>
 	<script src="js/buildTableFromData.js"></script>
 	<script src="js/loadPage.js"></script>
 	<script>
-		$('#zasoby').click(() => window.location.replace(`zasoby.html`));
-		$('#godashboard').click(() => window.location.replace(`dashboard.html`));
-		$('#logout').click(() => window.location.replace(`index.html`));
 		$(document).ready(function() {
 			loadPage('page_template.html', function() {
-				sendRequest('php/endpoints/selectAll.php?tableName=Zasoby', function(data) {
+				sendRequest('php/endpoints/selectAll.php?tableName=Zgloszenia', function(data) {
 					var entities = JSON.parse(data);
-					var html = buildTableFromData(['ID Zasobu', 'ID Właściciela', 'Rodzaj Zasobu', 'Nazwa Zasobu'], entities);
+					var html = buildTableFromData(['ID Zgłoszenia', 'ID Osoby', 'Typ Zdarzenia', 'Data Zgłoszenia'], entities);
 					$('#requestResponse').html(html);
 				});
 			});

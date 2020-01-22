@@ -54,14 +54,15 @@ class DBController {
         print "</table>\n";
     }
     public function createModel($queryResult) {
-        $arr
+        $arr = [];
         while ($row = oci_fetch_array($queryResult, OCI_ASSOC+OCI_RETURN_NULLS)) {
-            print "<tr>\n";
+            $ob = [];
             foreach ($row as $item) {
-                print "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") . "</td>\n";
+                array_push($ob, $item);
             }
-            print "</tr>\n";
+            array_push($arr, $ob);
         }
+        return $arr;
     }
 }
 

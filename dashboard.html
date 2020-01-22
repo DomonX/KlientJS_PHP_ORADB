@@ -6,8 +6,6 @@
 		<meta name="description" content="" />
 		<meta name="author" content="" />
 
-		<title>Dashboard Template for Bootstrap</title>
-
 		<!-- Bootstrap core CSS -->
 		<link href="dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -17,10 +15,10 @@
 
 	<body>
 		<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-			<a id="logo" class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+			<a id="godashboard" class="navbar-brand col-sm-3 col-md-2 mr-0" href="dashboard.html">Company name</a>
 			<ul class="navbar-nav px-3">
 				<li class="nav-item text-nowrap">
-					<a id="logout" href="#" class="nav-link">Sign out</a>
+					<a id="logout" href="index.html" class="nav-link">Sign out</a>
 				</li>
 			</ul>
 		</nav>
@@ -46,18 +44,14 @@
 			</div>
 		</div>
 		<script src="dist/jquery/jquery-3.4.1.min.js"></script>
-		<script src="js/sendToBackend.js"></script>
 		<script src="js/menuTransitions.js"></script>
+		<script src="js/sendToBackend.js"></script>
+		<script src="js/loadPage.js"></script>
 		<script>
 			$(document).ready(function() {
 				sendRequest('menu.html', function(data) {
 					$('#menu').html(data);
 				});
-			});
-		</script>
-		<script>
-			$('#logout').click(function() {
-				window.location.replace(`index.html`);
 			});
 		</script>
 		<script>
