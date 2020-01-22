@@ -35,19 +35,42 @@
 					<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
 						<h1 class="h2">Dashboard</h1>
 					</div>
-					<button id="createSequence" type="button" class="btn btn-primary">Create Sequence</button>
-					<button id="dropSequence" type="button" class="btn btn-primary">Drop Sequences</button>
-					<button id="createTable" type="button" class="btn btn-primary">Create Tables</button>
-					<button id="dropTable" type="button" class="btn btn-primary">Drop Tables</button>
-					<button id="insertAll" type="button" class="btn btn-primary">Insert All</button>
-					<button id="deleteAll" type="button" class="btn btn-primary">Delete All</button>
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">First</th>
+								<th scope="col">Last</th>
+								<th scope="col">Handle</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
 					<div id="requestResponse"></div>
 				</main>
 			</div>
 		</div>
 		<script src="dist/jquery/jquery-3.4.1.min.js"></script>
 		<script src="js/sendToBackend.js"></script>
-		<script src="js/menuTransitions.js"></script>
 		<script>
 			$(document).ready(function() {
 				sendRequest('menu.html', function(data) {
@@ -61,36 +84,13 @@
 			});
 		</script>
 		<script>
-			$('#createSequence').click(function() {
-				sendRequest('php/endpoints/runQueryFromFile.php?filename=sequence', function(data) {
-					$('#requestResponse').html(data);
-				});
-			});
-			$('#dropSequence').click(function() {
-				sendRequest('php/endpoints/runQueryFromFile.php?filename=dropSequence', function(data) {
-					$('#requestResponse').html(data);
-				});
-			});
-			$('#createTable').click(function() {
-				sendRequest('php/endpoints/runQueryFromFile.php?filename=createTable', function(data) {
-					$('#requestResponse').html(data);
-				});
-			});
-			$('#dropTable').click(function() {
-				sendRequest('php/endpoints/runQueryFromFile.php?filename=droptable', function(data) {
-					$('#requestResponse').html(data);
-				});
-			});
-			$('#insertAll').click(function() {
-				sendRequest('php/endpoints/runQueryFromFile.php?filename=insert', function(data) {
-					$('#requestResponse').html(data);
-				});
-			});
-			$('#deleteAll').click(function() {
-				sendRequest('php/endpoints/runQueryFromFile.php?filename=delete', function(data) {
+			$(document).ready(function() {
+				sendRequest('php/endpoints/selectAll.php?tableName=Zasoby', function(data) {
+					console.log(data);
 					$('#requestResponse').html(data);
 				});
 			});
 		</script>
+		<script></script>
 	</body>
 </html>
