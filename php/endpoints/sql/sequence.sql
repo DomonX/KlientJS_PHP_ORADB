@@ -1,0 +1,13 @@
+CREATE SEQUENCE Komenda_Glowna_Seq;
+CREATE SEQUENCE Posterunki_Seq;
+CREATE SEQUENCE Osoby_Seq;
+CREATE SEQUENCE Zgloszenia_Seq;
+CREATE SEQUENCE Zgloszenia_posterunku_Seq;
+CREATE SEQUENCE Wykroczenia_Seq;
+CREATE SEQUENCE Kary_Seq;
+CREATE SEQUENCE Kary_za_wykroczenia_Seq;
+CREATE SEQUENCE Pracownicy_Seq;
+CREATE SEQUENCE Wydzialy_Seq;
+CREATE SEQUENCE Policjanci_Seq;
+CREATE SEQUENCE Zasoby_Seq;
+CREATE SEQUENCE Czynosci_Policjantow_Seq;

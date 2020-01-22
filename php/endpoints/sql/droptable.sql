@@ -1,0 +1,13 @@
+DROP TABLE Czynosci_Policjantow;
+DROP TABLE Zasoby;
+DROP TABLE Policjanci;
+DROP TABLE Wydzialy;
+DROP TABLE Pracownicy;
+DROP TABLE Kary_za_wykroczenia;
+DROP TABLE Kary;
+DROP TABLE Wykroczenia;
+DROP TABLE Zgloszenia_posterunku;
+DROP TABLE Zgloszenia;
+DROP TABLE Osoby;
+DROP TABLE Posterunki;
+DROP TABLE Komenda_Glowna;

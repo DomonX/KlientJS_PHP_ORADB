@@ -1,0 +1,13 @@
+DROP SEQUENCE Czynosci_Policjantow_Seq;
+DROP SEQUENCE Zasoby_Seq;
+DROP SEQUENCE Policjanci_Seq;
+DROP SEQUENCE Wydzialy_Seq;
+DROP SEQUENCE Pracownicy_Seq;
+DROP SEQUENCE Kary_za_wykroczenia_Seq;
+DROP SEQUENCE Kary_Seq;
+DROP SEQUENCE Wykroczenia_Seq;
+DROP SEQUENCE Zgloszenia_posterunku_Seq;
+DROP SEQUENCE Zgloszenia_Seq;
+DROP SEQUENCE Osoby_Seq;
+DROP SEQUENCE Posterunki_Seq;
+DROP SEQUENCE Komenda_Glowna_Seq;

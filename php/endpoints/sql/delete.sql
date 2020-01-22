@@ -1,0 +1,13 @@
+delete from Czynosci_Policjantow;
+delete from Zasoby;
+delete from Policjanci;
+delete from Wydzialy;
+delete from Pracownicy;
+delete from Kary_za_wykroczenia;
+delete from Kary;
+delete from Wykroczenia;
+delete from Zgloszenia_posterunku;
+delete from Zgloszenia;
+delete from Osoby;
+delete from Posterunki;
+delete from Komenda_Glowna;
