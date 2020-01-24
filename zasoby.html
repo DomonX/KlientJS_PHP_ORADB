@@ -15,6 +15,7 @@
 
 	<body></body>
 	<script src="dist/jquery/jquery-3.4.1.min.js"></script>
+	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="js/menuTransitions.js"></script>
 	<script src="js/sendToBackend.js"></script>
 	<script src="js/buildTableFromData.js"></script>
@@ -29,6 +30,19 @@
 					var entities = JSON.parse(data);
 					var html = buildTableFromData(['ID Zasobu', 'ID Właściciela', 'Rodzaj Zasobu', 'Nazwa Zasobu'], entities);
 					$('#requestResponse').html(html);
+					sendRequest('crudbar.html', function(data) {
+						$('#topbar').html(data);
+						sendRequest('modalAdd.html', function(data) {
+							$('body').append(data);
+							$('#add').click(() => {
+								$('#modalAdd').modal('show');
+								$('#modalOk').click(() => {
+									var x = [$('#id_prac').val(), $('#rodzaj').val(), $('#nazwa').val()];
+									sendRequest(`php/endpoints/insertToZasoby.php?data=${JSON.stringify(x)}`, () => {});
+								});
+							});
+						});
+					});
 				});
 			});
 		});
