@@ -9,7 +9,6 @@
     $query .= "'" . $data[1] . "'" . ',';
     $query .= "'" . $data[2] . "'";
     $query .= ')';
-    var_dump($query);
-    $val = $db->createModel($db->performQuery($query));
+    $db->performQuery($query);
     $db->close();
 ?>

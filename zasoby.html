@@ -39,6 +39,20 @@
 								$('#modalOk').click(() => {
 									var x = [$('#id_prac').val(), $('#rodzaj').val(), $('#nazwa').val()];
 									sendRequest(`php/endpoints/insertToZasoby.php?data=${JSON.stringify(x)}`, () => {});
+									$('#modalAdd').modal('hide');
+								});
+							});
+						});
+						sendRequest('modalDelete.html', function(data) {
+							$('body').append(data);
+							$('#delete').click(() => {
+								$('#modalDelete').modal('show');
+								$('#modalOkDelete').click(() => {
+									var x = $('#id_zas').val();
+									sendRequest(`php/endpoints/deleteFromZasoby.php?id=${x}`, data => {
+										console.log(data);
+									});
+									$('#modalDelete').modal('hide');
 								});
 							});
 						});
