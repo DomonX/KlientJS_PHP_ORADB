@@ -3,7 +3,7 @@ session_start();
 class DBController {
     public $conn;
     public function connect() {
-        $this->conn = oci_connect($_SESSION['db_username'], $_SESSION['db_password'], 'localhost/ORCL');
+        $this->conn = oci_connect($_SESSION['db_username'], $_SESSION['db_password'], 'localhost/XE');
         if (!$this->conn) {
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);

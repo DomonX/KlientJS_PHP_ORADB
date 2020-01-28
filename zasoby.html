@@ -57,6 +57,25 @@
 							});
 						});
 					});
+					sendRequest('modalEdit.html', function(data) {
+							$('body').append(data);
+							$('#edit').click(() => {
+								$('#modalEdit').modal('show');
+								$('#modalOkEdit').click(() => {
+									var x = [
+										$('#id_zas_edit').val(), 
+										$('#id_prac_edit').val(), 
+										$('#rodzaj_edit').val(), 
+										$('#nazwa_edit').val()
+									];
+									var data = JSON.stringify(x);
+									sendRequest(`php/endpoints/editZasob.php?data=${data}`, data => {
+										console.log(data);
+									});
+									$('#modalEdit').modal('hide');
+								});
+							});
+						});
 				});
 			});
 		});
